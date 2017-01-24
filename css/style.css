@@ -1,0 +1,75 @@
+*{
+    margin=0px;
+}
+body{
+    padding=0px;
+}
+button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #c17e2b;
+    width: 10%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+button:hover, button:active, button:focus {
+    background: #f3c43f;
+}
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 30%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.content{
+    width: 100%;
+    height: 60%;
+    position: relative;
+    background: #c9c9c9;
+}
+.menu{
+    width: 25%;
+    height: 100%;
+}
+.isi{
+    background: #d8ab43;
+    width: 60%;
+    height: 100%;
+    float: right;
+
+}
+.footer{
+    width: 100%;
+    height:100%
+}
+ul#nav li{
+    list-style:none;
+}
+ul#nav li a{
+    display: block;
+    padding: 10px;
+    color: #fff;
+    font-size: 0.8em;
+    border-radius: 4em;
+    border-bottom: 1px solid #0a0a0a;
+    -webkit-transition: 0.2s;
+    -o -transition : 0.2s;
+    transition: 0.2s;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+ul#nav li a:hover{
+    background-color: #00bfff;
+    padding-right:4px;
+    font-weight: 100%;
+}
