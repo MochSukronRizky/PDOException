@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2017 at 10:05 AM
+-- Generation Time: Jan 25, 2017 at 07:01 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -43,16 +43,21 @@ CREATE TABLE `login` (
 CREATE TABLE `product` (
   `id_product` int(100) NOT NULL,
   `nama` varchar(255) NOT NULL,
-  `stok` int(11) NOT NULL
+  `stok` int(11) NOT NULL,
+  `img` varchar(100) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id_product`, `nama`, `stok`) VALUES
-(1, 'Baju 1', 10),
-(2, 'Baju2', 5);
+INSERT INTO `product` (`id_product`, `nama`, `stok`, `img`, `keterangan`, `level`) VALUES
+(1, 'Baju 1', 10, '', '', 1),
+(2, 'Baju2', 5, '', '', 1),
+(3, 'Three second', 20, '', 'bahan combat cotton 30s \r\nstock size S/M/L/XL', 1),
+(4, 'QuickSilver 30s', 40, 'af', 'cottoncombat 30s\r\nsize S/M/L/XL', 0);
 
 --
 -- Indexes for dumped tables
@@ -83,7 +88,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id_product` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_product` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
