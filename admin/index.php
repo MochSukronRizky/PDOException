@@ -9,9 +9,9 @@ $db = new query($conn);
 
 $query = isset($_POST['search']) ? $_POST['search'] : "";
 
-$tambah = $db->isnsert($_POST)
+//$tambah = $db->isnsert($_POST)
 
-$img=isset($_POST['img']);
+$img=isset($_POST['img'])?$_POST['img']:"";
 
 $products = $db->selectLike('product', 'nama', $query);
 
@@ -30,7 +30,7 @@ $listbrg = $db->barang('product', 'level', $query);
                     welcome to AUTOFOCUS store
                 </h1>
             </div>
-            <table>
+            <div>
                 <form method="post" action="">
                     <div class="form">
                         <button name="btn-signOut" style="float:right;">Sign Out</button>
@@ -50,7 +50,7 @@ $listbrg = $db->barang('product', 'level', $query);
                         </div>
                         <div class="dropdown">
                             <button class="dropbtn" style="width:auto;">
-                                <a href="index.php?p=frmEdtBrng">Edit barang</a>
+                                <a href="index.php?p=edtBrng">Edit barang</a>
                             </button>
                         </div>
                         <div class="dropdown">
@@ -60,14 +60,15 @@ $listbrg = $db->barang('product', 'level', $query);
                         </div>
                     </div>
                 </form>
+                </div>
                 <div class="content">
-                    <div class="menu">
+                    <ul id="nav">
                         <div class="isi">
                             <?php
                             if (isset($_POST['btn-submit'])) {
                                 foreach($products as $p) {
                             ?>
-                            <div style="float:center;">
+                            <table>
                                 <tr>
                                     <td>
                                     <?php
@@ -100,23 +101,23 @@ $listbrg = $db->barang('product', 'level', $query);
                                             ?>
                                     </td>
                                 </tr>
-                            </div>
-                            <?php
-                                }
-                            }else{
-                                $p=isset($_POST['p'])?$_POST['p']:'dashboard';
-                                include $p.'.php';
+                            </table>
+                        <?php
                             }
-                            ?>
-                        </div>
-                        <ul id="nav" align="center">
+                        }else{
+                            $p=isset($_POST['p'])?$_POST['p']:'dashboard';
+                            include $p.'.php';
+                        }
+                        ?>
+                            </div>
+                        <div class="menu">
                             <a href="index.php?p=dashboard"><li>Home</li></a>
-                            <a href="index.php?p=tshirt"><li>t-shirt</li></a>
+                            <a href="index.php?p=tshirt"><li>T - Shirt</li></a>
                             <a href="index.php?p=shoes"><li>Shoes</li></a>
-                        </ul>
-                    </div>
+                        </div>
+                    </ul>
                 </div>
-            </table>
+            </div>
             <div class="footer">
                 footer
             </div>
