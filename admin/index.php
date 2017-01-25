@@ -27,7 +27,7 @@ $listbrg = $db->barang('product', 'level', $query);
         <div id="">
             <div class="">
                 <h1>
-                    welcome to AUTOFOCUS store
+                    AUTOFOCUS store
                 </h1>
             </div>
             <div>
@@ -46,6 +46,16 @@ $listbrg = $db->barang('product', 'level', $query);
                         <div class="dropdown">
                             <button class="dropbtn" style="width:auto;">
                                 <a href="index.php?p=frmTambahBrng">Tambah Barang</a>
+                            </button>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn" style="width:auto;">
+                                <a href="index.php?p=profille">Profile</a>
+                            </button>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn" style="width:auto;">
+                                <a href="index.php?p=edtProfile">Edit Profile</a>
                             </button>
                         </div>
                         <div class="dropdown">
