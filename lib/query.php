@@ -18,6 +18,8 @@ class query{
 
         return $urute->fetchAll(PDO::FETCH_CLASS);
     }
+
+
     public function selectLike($tabel,$kolom="", $value=""){
 
         $urute = $this->pdo->prepare("select * from {$tabel} where {$kolom} like '%{$value}%'");
@@ -26,6 +28,14 @@ class query{
         return $urute->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function barang($tabel,$kolom="", $value=""){
+
+        $urute = $this->pdo->prepare("select * from {$tabel} where {$kolom}");
+        $urute->execute();
+
+        return $urute->fetchAll(PDO::FETCH_CLASS);
+
+    }
 
     public function insert($tabel,$ukuran){
         $query = sprintf(
@@ -44,21 +54,40 @@ class query{
             return false;
         }
     }
-/*
+
     public function deleteTabel($tabel,$kolom,$filed){
         if($tabel){
-            $query = sprintf('DROP TABLE',$tabel);
+            $query = sprintf(
+                'DROP TABLE ',$tabel);
 
             try{
-                $this->pdo;
+                $urute = $this->pdo->prepare($query);
+                $urute->execute($tabel);
+
+                return true;
+            }catch(\Exception $e){
+                return false;
             }
         }elseif ($kolom) {
-            $query = sprintf('ALTER TABLE {$tabel} DROP {$field}')
+            $query = sprintf(
+                'ALTER TABLE %s DROP %s',
+                $tabel,
+                implode(', :', array_keys($filed))
+                );
+
+            try{
+                $urute = $this->pdo->prepare($query);
+                $urute->execute($filed);
+
+                return true;
+            }catch(\Exception $e){
+                return false;
+            }
         }
     }
-
+/*
     public function deleteKolom($kolom){
-        $query =
+        $query =;
     }
 
     public function update($tabel,$kolom)

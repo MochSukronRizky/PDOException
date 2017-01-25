@@ -4,6 +4,10 @@
 body{
     padding=0px;
 }
+h1{
+    text-decoration: inherit;
+    color:rgba(189, 95, 0, 0.59);
+}
 button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
@@ -21,6 +25,37 @@ button {
 button:hover, button:active, button:focus {
     background: #f3c43f;
 }
+.bgmn{
+    width: 100%
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+    width: auto;
+    float: left;
+    background:#c17e2b;
+}
+a{
+    color:white;
+    text-decoration:none;
+}
+.dropbtn {
+    background-color: #c17e2b;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown-content button:hover {
+    background-color: #c17e2b;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #f3c43f;
+}
 .form input {
     font-family: "Roboto", sans-serif;
     outline: 0;
@@ -37,21 +72,27 @@ button:hover, button:active, button:focus {
     height: 60%;
     position: relative;
     background: #c9c9c9;
+    margin-top: 8%;
 }
 .menu{
-    width: 25%;
+    width: 100%;
     height: 100%;
 }
 .isi{
     background: #d8ab43;
-    width: 60%;
+    width: 84%;
     height: 100%;
     float: right;
+    margin-left: 49px;
 
 }
 .footer{
     width: 100%;
     height:100%
+}
+.menu a{
+    text-decoration: none;
+    color: #fff;
 }
 ul#nav li{
     list-style:none;
