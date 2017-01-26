@@ -9,7 +9,7 @@ $db = new query($conn);
 
 $query = isset($_POST['search']) ? $_POST['search'] : "";
 
-//$tambah = $db->isnsert($_POST)
+//$tambah = $db->isnsert($_POST['']);
 
 $img=isset($_POST['img'])?$_POST['img']:"";
 
@@ -22,6 +22,7 @@ $listbrg = $db->barang('product', 'level', $query);
     <head>
         <title>AUTOFOCUSstore</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     </head>
     <body>
         <div id="">
@@ -33,7 +34,11 @@ $listbrg = $db->barang('product', 'level', $query);
             <div>
                 <form method="post" action="">
                     <div class="form">
-                        <button name="btn-signOut" style="float:right;">Sign Out</button>
+                        <button name="btn-signOut" style="float:right;">Sign Out
+                            <script type="text/javascript">
+                                location:'index.php?p';
+                            </script>
+                        </button>
                             <input type="text" id="search" name="search" placeholder="Search"/>
                         <button name="btn-submit">Search</button>
                     </div>
@@ -129,7 +134,8 @@ $listbrg = $db->barang('product', 'level', $query);
                 </div>
             </div>
             <div class="footer">
-                footer
+                <center><strong>Copyrght 2017 &copy;</strong></center>
+                <script src="../css/bootstrap/js/bootstrap.min.js"></script>
             </div>
         </div>
     </body>
