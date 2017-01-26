@@ -13,6 +13,9 @@ class koneksi{
         }catch(PDOException $e){
             var_dump($e-getMessage());
         }
+        include_once 'query.php';
+
+        $crud = new crud($pdo);
     }
 }
 

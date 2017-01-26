@@ -25,6 +25,7 @@ $listbrg = $db->barang('product', 'level', $query);
         <link href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     </head>
     <body>
+    <form method="post" action="">
         <div id="">
             <div class="">
                 <h1>
@@ -32,7 +33,6 @@ $listbrg = $db->barang('product', 'level', $query);
                 </h1>
             </div>
             <div>
-                <form method="post" action="">
                     <div class="form">
                         <button name="btn-signOut" style="float:right;">Sign Out
                             <script type="text/javascript">
@@ -74,13 +74,12 @@ $listbrg = $db->barang('product', 'level', $query);
                             </button>
                         </div>
                     </div>
-                </form>
                 </div>
                 <div class="content">
                     <ul id="nav">
                         <div class="isi">
                             <?php
-                            if (isset($_POST['btn-submit'])) {
+                              if (isset($_POST['btn-submit'])) {
                                 foreach($products as $p) {
                             ?>
                             <table>
@@ -120,8 +119,9 @@ $listbrg = $db->barang('product', 'level', $query);
                         <?php
                             }
                         }else{
-                            $p=isset($_POST['p'])?$_POST['p']:'dashboard';
-                            include $p.'.php';
+
+                            $p = isset($_POST['p'])?$_POST['p']:'dashboard';
+                            include ('$p.php');
                         }
                         ?>
                             </div>
@@ -138,5 +138,6 @@ $listbrg = $db->barang('product', 'level', $query);
                 <script src="../css/bootstrap/js/bootstrap.min.js"></script>
             </div>
         </div>
+        </form>
     </body>
 </html>
